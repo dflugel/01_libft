@@ -6,7 +6,7 @@
 /*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:25:54 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/10 18:19:28 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/10 18:37:16 by dflugel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 int		ft_atoi(const char *nptr);
 
-void	*ft_calloc(size_t nitems, size_t size);
+void	*ft_calloc(size_t nmemb, size_t size);
 
 char	*ft_strdup(const char *str);
 
