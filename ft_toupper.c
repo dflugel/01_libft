@@ -6,8 +6,19 @@
 /*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:29:14 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/09 12:29:19 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/10 15:24:22 by dflugel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_toupper(int c);
+
+int	ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+	{
+		c -= 32;
+	}
+	return (c);
+}
