@@ -6,7 +6,7 @@
 /*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:25:54 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/10 13:06:11 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/10 13:31:17 by dflugel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
-size_t	strlcat(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 int		ft_toupper(int c);
 

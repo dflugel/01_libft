@@ -6,7 +6,7 @@
 /*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:00:23 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/10 13:17:35 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/10 13:25:11 by dflugel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	int		lenght;
+	size_t	length;
 
 	i = 0;
-	lenght = ft_strlen(src);
+	length = ft_strlen(src);
 	while (*(src + i) != '\0')
 	{
 		if (i == size)
@@ -32,5 +32,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		i++;
 	}
 	*(dst + i) = '\0';
-	return (lenght);
+	return (length);
 }

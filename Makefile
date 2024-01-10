@@ -8,6 +8,7 @@ test: test.c
 	gcc $(CFLAGS) -o test.o test.c $(MANDO) $(BONUS)
 
 clean:
+	rm -f *.o
 
 fclean:
 	rm -f $(NAME)
