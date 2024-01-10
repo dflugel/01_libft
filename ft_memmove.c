@@ -6,7 +6,7 @@
 /*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:00:16 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/09 15:48:27 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/10 10:48:55 by dflugel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	i = 0;
 	if (dest < src)
 	{
-	while (i < n)
+		while (i < n)
 		{
 			*(target_memory + i) = *(source_memory + i);
 			i++;
@@ -33,10 +33,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else
 	{
-	while (i < n)
+		while (i < n)
 		{
 			*(target_memory + n) = *(source_memory + n);
-			n++;
+			n--;
 		}
 	}
 	return (dest);
