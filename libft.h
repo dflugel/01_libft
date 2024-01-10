@@ -6,7 +6,7 @@
 /*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:25:54 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/10 17:38:53 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/10 17:53:18 by dflugel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
-char	*ft_strnstr(char *haystack, char *needle, size_t len);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 int		ft_atoi(char *str);
 
