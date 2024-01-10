@@ -6,12 +6,11 @@
 /*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:26:43 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/10 18:34:22 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/10 18:47:34 by dflugel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_atoi(const char *nptr);
 
