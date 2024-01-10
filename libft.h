@@ -6,7 +6,7 @@
 /*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:25:54 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/10 16:34:23 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/10 16:44:04 by dflugel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_strchr(const char *s, int c);
 
 char	*ft_strrchr(const char *s, int c);
 
-size_t	ft_strncmp(char *str1, char *str2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 char	*ft_memchr(char *str, int c, size_t n);
 
