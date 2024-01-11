@@ -6,7 +6,7 @@
 /*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:27:43 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/11 18:18:52 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/11 18:29:05 by dflugel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*current;
-	t_list	*next;
 
 	if (lst == NULL || f == NULL)
 	{
