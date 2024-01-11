@@ -1,11 +1,25 @@
 NAME = libft.a
 
+CC = gcc
+
 CFLAGS = -Wall -Wextra -Werror
 
-all:
+MANDOOBJ	= $(MANDO:.c=.o)
+BONUSOBJ 	= $(BONUS:.c=.o)
+
+%.o : %.c
+	@$(CC) $(CFLAGS) -o
+
+all: $(NAME) bonus
+
+$(NAME): $(MANDOOBJ)
+	@ar -rcs $(NAME)
+
+bonus: $(BONUSOBJ)
+	@ar -rcs $(NAME)
 
 test: test.c
-	gcc $(CFLAGS) -o test.o test.c $(MANDO) $(BONUS)
+	$(CC) $(CFLAGS) -o test.o test.c $(MANDO) $(BONUS)
 
 clean:
 	rm -f *.o
