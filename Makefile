@@ -1,33 +1,4 @@
-NAME = libft.a
-
-CC = cc
-
-CFLAGS = -Wall -Wextra -Werror
-
-MANDOOBJ	= $(MANDO:.c=.o)
-BONUSOBJ 	= $(BONUS:.c=.o)
-
-%.o : %.c
-	@$(CC) $(CFLAGS) -o
-
-all: $(NAME) bonus
-
-$(NAME): $(MANDOOBJ)
-	@ar -rcs $(NAME)
-
-bonus: $(BONUSOBJ)
-	@ar -rcs $(NAME)
-
-test: test.c
-	$(CC) $(CFLAGS) -o test.o test.c $(MANDO) $(BONUS)
-
-clean:
-	rm -f *.o
-
-fclean:
-	rm -f $(NAME)
-
-re: fclean all
+# Files:
 
 MANDO =	ft_isalpha.c \
 		ft_isdigit.c \
@@ -62,7 +33,7 @@ MANDO =	ft_isalpha.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
-		ft_putnbr_fd.c \
+		ft_putnbr_fd.c
 
 BONUS =	ft_lstnew.c \
 		ft_lstadd_front.c \
@@ -72,4 +43,33 @@ BONUS =	ft_lstnew.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
-		ft_lstmap.c \
+		ft_lstmap.c
+
+# Rules:
+NAME = libft.a
+
+CC = cc
+
+CFLAGS = -Wall -Wextra -Werror
+
+MANDOOBJ	= $(MANDO:.c=.o)
+BONUSOBJ 	= $(BONUS:.c=.o)
+
+all: $(NAME) bonus
+
+$(NAME): $(MANDOOBJ)
+	@ar rcs $(NAME) $(MANDOOBJ)
+
+bonus: $(BONUSOBJ)
+	@ar rcs $(NAME) $(BONUSOBJ)
+
+test: test.c
+	$(CC) $(CFLAGS) -o test.o test.c $(MANDO) $(BONUS)
+
+clean:
+	rm -f $(MANDOOBJ) $(BONUSOBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
