@@ -3,53 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: madwingg <madwingg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:00:28 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/10 15:15:54 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/16 18:30:08 by madwingg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
-size_t	ft_catlen(char *dst, const char *src, size_t size);
+//size_t	ft_catlen(char *dst, const char *src, size_t size);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	length;
+	size_t	j;
 
 	i = 0;
-	length = ft_catlen(dst, src, size);
-	while (*(dst + i) != '\0' && i < size)
-	{
+	j = 0;
+	if (size == 0)
+		return (ft_strlen(src));
+	while (*(dst + i) && i < size)
 		i++;
-	}
-	while (*src != '\0' && i < size)
+	while (*(src + j) && i + j + 1 < size)
 	{
-		*(dst + i) = *src;
-		src++;
-		i++;
+		*(dst + i + j) = *(src + j);
+		j++;
 	}
-	*(dst + i) = '\0';
-	return (length);
-}
-
-size_t	ft_catlen(char *dst, const char *src, size_t size)
-{
-	size_t	length;
-
-	length = 0;
-	while (*dst != '\0' && length < size)
-	{
-		dst++;
-		length++;
-	}
-	while (*src != '\0' && length < size)
-	{
-		src++;
-		length++;
-	}
-	return (length);
+	if (size != 0 && i < size)
+		*(dst + i + j) = '\0';
+	while (*(src + j))
+		j++;
+	return (i + j);
 }
