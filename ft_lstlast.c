@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: madwingg <madwingg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:27:46 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/11 18:17:17 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/17 21:52:18 by madwingg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,13 @@ t_list	*ft_lstlast(t_list *lst)
 	t_list	*current;
 
 	current = lst;
-	while (current->next != NULL)
+	while (current != NULL)
 	{
+		if (current->next == NULL)
+		{
+			return (current);
+		}
 		current = current->next;
 	}
-	return (current);
+	return (0);
 }
