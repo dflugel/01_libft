@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: madwingg <madwingg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:28:34 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/10 18:49:01 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/18 13:34:39 by madwingg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strdup(const char *s)
 	{
 		return (NULL);
 	}
-	duplicate = malloc(ft_strlen(s));
+	duplicate = malloc(ft_strlen(s) + 1);
 	if (!duplicate)
 	{
 		return (NULL);
