@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: madwingg <madwingg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:28:31 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/10 16:32:04 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/18 13:48:06 by madwingg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,19 @@ char	*ft_strchr(const char *s, int c);
 
 char	*ft_strchr(const char *s, int c)
 {
+	if (c < 0)
+	{
+		return ((char *)s);
+	}
 	while (*(s) != '\0')
 	{
-		if (*(s) == c)
+		if (*(s) == (char)c)
 		{
 			return ((char *)s);
 		}
 		s++;
 	}
-	if (*(s) == c)
+	if (*(s) == (char)c)
 	{
 		return ((char *)s);
 	}
