@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: madwingg <madwingg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:28:58 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/10 18:04:41 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/18 13:10:18 by madwingg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	while (*(big + i) != '\0')
+	if (!big)
+		return (0);
+	if (*little == '\0' || little == 0)
+		return ((char *) big);
+	while (*(big + i) != '\0' && i < len)
 	{
-		if (i == len || !little)
-		{
-			return (NULL);
-		}
-		while (*(big + i + j) == *(little + j))
+		while (*(big + i + j) == *(little + j) && i + j < len)
 		{
 			j++;
 			if (*(little + j) == '\0')
