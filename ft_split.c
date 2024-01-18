@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: madwingg <madwingg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:28:28 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/10 20:59:35 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/18 15:00:11 by madwingg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ int	count_strings(char const *s, char c)
 
 char	*str_alloc(char const *src_str, char del, int nr_str)
 {
-	int		i;
+	size_t	i;
 	char	*buffer;
 	char	*result;
 
-	buffer = malloc(ft_strlen(src_str) * sizeof(char));
+	buffer = malloc((ft_strlen(src_str) + 1) * sizeof(char));
 	src_str += cut_front(src_str, del, nr_str);
 	i = 0;
 	while (*(src_str + i) != del && *(src_str + i) != '\0')
@@ -73,7 +73,7 @@ char	*str_alloc(char const *src_str, char del, int nr_str)
 		i++;
 	}
 	*(buffer + i) = '\0';
-	result = malloc((ft_strlen(buffer)));
+	result = malloc((ft_strlen(buffer) + 1));
 	i = 0;
 	while (i < ft_strlen(buffer))
 	{

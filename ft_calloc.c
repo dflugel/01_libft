@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: madwingg <madwingg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:27:01 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/10 18:43:18 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/18 14:10:24 by madwingg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	i = 0;
 	n = nmemb * size;
 	place = malloc(n);
+	if (!place)
+		return (NULL);
 	while (i < (n))
 	{
 		*(place + i) = '\0';

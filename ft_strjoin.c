@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: madwingg <madwingg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:28:40 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/10 20:19:30 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/18 15:03:31 by madwingg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*ft_stringalloc(char const *s1, char const *s2)
 	{
 		return (NULL);
 	}
-	newstring = malloc(ft_strlen(s1) + ft_strlen(s2));
+	newstring = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!newstring)
 	{
 		return (NULL);

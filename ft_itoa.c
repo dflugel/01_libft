@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: madwingg <madwingg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:27:11 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/11 14:23:18 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/18 15:24:30 by madwingg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,28 @@
 
 char	*ft_itoa(int n);
 int		intlen(int n);
-char	*string_alloc(int n, int i);
+char	*string_alloc(long int n, int i);
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	int		i;
+	char		*str;
+	int			i;
+	long int	nbr;
 
-	if (n == 0)
-	{
-		return ("0");
-	}
-	else if (!n)
+	nbr = n;
+	if (!nbr)
 	{
 		return (NULL);
 	}
-	else if (n == -2147483648)
+	else if (n == 0)
 	{
-		return ("-2147483648");
+		str = malloc(2);
+		*str = '0';
+		*(str + 1) = '\0';
+		return (str);
 	}
-	i = intlen(n);
-	str = string_alloc(n, i);
+	i = intlen(nbr);
+	str = string_alloc(nbr, i);
 	return (str);
 }
 
@@ -51,7 +52,7 @@ int	intlen(int n)
 	return (i);
 }
 
-char	*string_alloc(int n, int i)
+char	*string_alloc(long int n, int i)
 {
 	char	*nbr_str;
 
@@ -59,14 +60,14 @@ char	*string_alloc(int n, int i)
 	{
 		i++;
 		n = n * -1;
-		nbr_str = malloc(i);
+		nbr_str = malloc(i + 1);
 		*nbr_str = '-';
 	}
 	else
 	{
-		nbr_str = malloc(i);
+		nbr_str = malloc(i + 1);
 	}
-	*(nbr_str + i) = '\0';
+	*(nbr_str + i + 1) = '\0';
 	i--;
 	while (n != 0)
 	{
