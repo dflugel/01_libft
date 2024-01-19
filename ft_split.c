@@ -6,34 +6,37 @@
 /*   By: madwingg <madwingg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:28:28 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/18 15:00:11 by madwingg         ###   ########.fr       */
+/*   Updated: 2024/01/19 15:05:01 by madwingg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int		count_strings(char const *s, char c);
+int		calc_str_start(char *str, char del, int last_end);
+int		calc_str_end(char *str, char del, int str_start);
 char	*str_alloc(char const *src_str, char del, int nr_str);
-int		cut_front(char const *src_str, char del, int nr_str);
+char	**ft_split(char const *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
 	int		n_str;
-	int		i;
+	int		str_start;
+	int		str_end;
+	char	*buffer;
 	char	**result;
 
 	if (s == NULL)
 	{
 		return (NULL);
 	}
-	n_str = count_strings(s, c);
+	buffer = ft_strtrim(s, &c);
+	n_str = count_strings(buffer, c);
 	result = malloc((n_str + 1) * sizeof(char *));
 	if (result == NULL)
-	{
 		return (NULL);
-	}
-	i = 0;
-	while (i < n_str)
+	str_start = 0;
+	while (n_str > 0)
 	{
 		*(result + i) = str_alloc(s, c, i);
 		i++;
@@ -46,16 +49,41 @@ int	count_strings(char const *s, char c)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (*s != '\0')
 	{
-		if (*s == c)
-		{
+		if (*s != c && *s != '\0')
 			i++;
-		}
-		s++;
+		while (*s != c && *s != '\0')
+			s++;
+		while (*s == c)
+			s++;
 	}
 	return (i);
+}
+
+int	calc_str_start(char *str, char del, int last_end)
+{
+	int	str_start;
+
+	str_start = last_end;
+	while (*(str + str_start) == del)
+	{
+		str_start++;
+	}
+	return (str_start);
+}
+
+int	calc_str_end(char *str, char del, int str_start)
+{
+	int	str_end;
+
+	str_end = str_start;
+	while (*(str + str_end + 1) != del && *(str + str_end + 1) != '\0')
+	{
+		str_end++;
+	}
+	return (str_end);
 }
 
 char	*str_alloc(char const *src_str, char del, int nr_str)
@@ -83,22 +111,4 @@ char	*str_alloc(char const *src_str, char del, int nr_str)
 	*(result + i) = '\0';
 	free(buffer);
 	return (result);
-}
-
-int	cut_front(char const *src_str, char del, int nr_str)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (i < nr_str)
-	{
-		if (*(src_str + j) == del)
-		{
-			i++;
-		}
-		j++;
-	}
-	return (j);
 }
