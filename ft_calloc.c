@@ -6,7 +6,7 @@
 /*   By: madwingg <madwingg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:27:01 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/18 14:10:24 by madwingg         ###   ########.fr       */
+/*   Updated: 2024/01/21 17:07:25 by madwingg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,17 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	int		n;
 	char	*place;
 
-	if (!nmemb || !size || nmemb * size > 2147483647)
-	{
+	if (nmemb * size > 2147483647)
 		return (NULL);
-	}
 	i = 0;
 	n = nmemb * size;
-	place = malloc(n);
+	place = (void *)malloc(n);
 	if (!place)
-		return (NULL);
+		return (0);
 	while (i < (n))
 	{
 		*(place + i) = '\0';
 		i++;
 	}
-	return (place);
+	return ((void *)place);
 }
