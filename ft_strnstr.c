@@ -6,7 +6,7 @@
 /*   By: madwingg <madwingg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:28:58 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/18 13:10:18 by madwingg         ###   ########.fr       */
+/*   Updated: 2024/01/22 01:23:55 by madwingg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	if (!big)
-		return (0);
 	if (*little == '\0' || little == 0)
 		return ((char *) big);
 	while (*(big + i) != '\0' && i < len)
