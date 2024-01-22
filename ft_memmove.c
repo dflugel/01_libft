@@ -6,7 +6,7 @@
 /*   By: madwingg <madwingg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:00:16 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/16 15:17:44 by madwingg         ###   ########.fr       */
+/*   Updated: 2024/01/22 01:18:35 by madwingg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char	*source_memory;
 	char	*target_memory;
 
-	if (!dest || !src)
+	if (!dest && !src)
 		return (0);
 	target_memory = (char *)dest;
 	source_memory = (char *)src;
