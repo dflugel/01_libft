@@ -6,7 +6,7 @@
 /*   By: madwingg <madwingg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:29:05 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/19 13:49:04 by madwingg         ###   ########.fr       */
+/*   Updated: 2024/01/22 01:32:24 by madwingg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strtrim(char const *s1, char const *s2)
 	while (ft_detect_trim((s1 + str_end), s2) == 1)
 		str_end--;
 	if (str_end < str_start)
-		return ("\0");
+		return (ft_strdup (""));
 	new_str = ft_substr(s1, str_start, (str_end - str_start + 1));
 	return (new_str);
 }
