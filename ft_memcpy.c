@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dflugel <dflugel@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: madwingg <madwingg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:00:11 by dflugel           #+#    #+#             */
-/*   Updated: 2024/01/09 15:48:55 by dflugel          ###   ########.fr       */
+/*   Updated: 2024/01/22 01:16:14 by madwingg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned const char	*source_memory;
 	unsigned char		*target_memory;
 
+	if (!dest && !src)
+	{
+		return (NULL);
+	}
 	target_memory = dest;
 	source_memory = src;
 	i = 0;
